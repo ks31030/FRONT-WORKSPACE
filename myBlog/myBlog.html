@@ -1,0 +1,969 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>김석의 블로그입니다.</title>
+        <meta charset="UFT-8">
+        <style>
+            html, body {
+                padding: 0;
+                margin: 0;
+                width: 100vw;
+                height: 500px;
+                position: relative;
+                overflow: hidden;
+                background: linear-gradient(#123, #111);
+            }
+            .snowflake {
+                --size: 1vw;
+                width: var(--size);
+                height: var(--size);
+                background: white;
+                border-radius: 50%;
+                position: absolute;
+                top: -5vh;
+            }
+            @keyframes snowfall {
+                0% {
+                    transform: translate3d(var(--left-ini), 0, 0);
+                }
+                100% {
+                    transform: translate3d(var(--left-end), 110vh, 0);
+                }
+            }
+            .snowflake:nth-child(1) {
+                --size: 1vw;
+                --left-ini: -8vw;
+                --left-end: 3vw;
+                left: 21vw;
+                animation: snowfall 12s linear infinite;
+                animation-delay: -10s;
+            }
+            .snowflake:nth-child(2) {
+                --size: 0.6vw;
+                --left-ini: 2vw;
+                --left-end: 10vw;
+                left: 17vw;
+                animation: snowfall 9s linear infinite;
+                animation-delay: -9s;
+            }
+            .snowflake:nth-child(3) {
+                --size: 0.8vw;
+                --left-ini: -5vw;
+                --left-end: -7vw;
+                left: 78vw;
+                animation: snowfall 12s linear infinite;
+                animation-delay: -1s;
+            }
+            .snowflake:nth-child(4) {
+                --size: 0.2vw;
+                --left-ini: -1vw;
+                --left-end: -9vw;
+                left: 57vw;
+                animation: snowfall 6s linear infinite;
+                animation-delay: -9s;
+            }
+            .snowflake:nth-child(5) {
+                --size: 0.2vw;
+                --left-ini: 9vw;
+                --left-end: -1vw;
+                left: 39vw;
+                animation: snowfall 10s linear infinite;
+                animation-delay: -3s;
+            }
+            .snowflake:nth-child(6) {
+                --size: 0.8vw;
+                --left-ini: 3vw;
+                --left-end: -6vw;
+                left: 60vw;
+                animation: snowfall 10s linear infinite;
+                animation-delay: -1s;
+            }
+            .snowflake:nth-child(7) {
+                --size: 1vw;
+                --left-ini: -1vw;
+                --left-end: -4vw;
+                left: 89vw;
+                animation: snowfall 6s linear infinite;
+                animation-delay: -8s;
+            }
+            .snowflake:nth-child(8) {
+                --size: 1vw;
+                --left-ini: -4vw;
+                --left-end: -7vw;
+                left: 33vw;
+                animation: snowfall 11s linear infinite;
+                animation-delay: -2s;
+            }
+            .snowflake:nth-child(9) {
+                --size: 1vw;
+                --left-ini: -4vw;
+                --left-end: -4vw;
+                left: 78vw;
+                animation: snowfall 10s linear infinite;
+                animation-delay: -5s;
+            }
+            .snowflake:nth-child(10) {
+                --size: 0.6vw;
+                --left-ini: -3vw;
+                --left-end: 1vw;
+                left: 73vw;
+                animation: snowfall 15s linear infinite;
+                animation-delay: -7s;
+            }
+            .snowflake:nth-child(11) {
+                --size: 0.4vw;
+                --left-ini: 6vw;
+                --left-end: -1vw;
+                left: 62vw;
+                animation: snowfall 8s linear infinite;
+                animation-delay: -8s;
+            }
+            .snowflake:nth-child(12) {
+                --size: 0.4vw;
+                --left-ini: -1vw;
+                --left-end: 1vw;
+                left: 46vw;
+                animation: snowfall 14s linear infinite;
+                animation-delay: -10s;
+            }
+            .snowflake:nth-child(13) {
+                --size: 0.8vw;
+                --left-ini: 5vw;
+                --left-end: 0vw;
+                left: 28vw;
+                animation: snowfall 9s linear infinite;
+                animation-delay: -5s;
+            }
+            .snowflake:nth-child(14) {
+                --size: 0.8vw;
+                --left-ini: 0vw;
+                --left-end: -8vw;
+                left: 96vw;
+                animation: snowfall 9s linear infinite;
+                animation-delay: -5s;
+            }
+            .snowflake:nth-child(15) {
+                --size: 1vw;
+                --left-ini: 9vw;
+                --left-end: 4vw;
+                left: 48vw;
+                animation: snowfall 8s linear infinite;
+                animation-delay: -5s;
+            }
+            .snowflake:nth-child(16) {
+                --size: 0.6vw;
+                --left-ini: -2vw;
+                --left-end: 6vw;
+                left: 42vw;
+                animation: snowfall 11s linear infinite;
+                animation-delay: -3s;
+            }
+            .snowflake:nth-child(17) {
+                --size: 0.8vw;
+                --left-ini: -5vw;
+                --left-end: -5vw;
+                left: 11vw;
+                animation: snowfall 15s linear infinite;
+                animation-delay: -4s;
+            }
+            .snowflake:nth-child(18) {
+                --size: 1vw;
+                --left-ini: -5vw;
+                --left-end: 2vw;
+                left: 21vw;
+                animation: snowfall 6s linear infinite;
+                animation-delay: -5s;
+            }
+            .snowflake:nth-child(19) {
+                --size: 0.6vw;
+                --left-ini: -6vw;
+                --left-end: 0vw;
+                left: 66vw;
+                animation: snowfall 14s linear infinite;
+                animation-delay: -5s;
+            }
+            .snowflake:nth-child(20) {
+                --size: 0.8vw;
+                --left-ini: 7vw;
+                --left-end: -5vw;
+                left: 20vw;
+                animation: snowfall 9s linear infinite;
+                animation-delay: -4s;
+            }
+            .snowflake:nth-child(21) {
+                --size: 1vw;
+                --left-ini: 5vw;
+                --left-end: -9vw;
+                left: 50vw;
+                animation: snowfall 13s linear infinite;
+                animation-delay: -2s;
+            }
+            .snowflake:nth-child(22) {
+                --size: 0.8vw;
+                --left-ini: 3vw;
+                --left-end: 5vw;
+                left: 16vw;
+                animation: snowfall 12s linear infinite;
+                animation-delay: -8s;
+            }
+            .snowflake:nth-child(23) {
+                --size: 0.2vw;
+                --left-ini: -1vw;
+                --left-end: 5vw;
+                left: 89vw;
+                animation: snowfall 15s linear infinite;
+                animation-delay: -2s;
+            }
+            .snowflake:nth-child(24) {
+                --size: 0.2vw;
+                --left-ini: -8vw;
+                --left-end: -9vw;
+                left: 36vw;
+                animation: snowfall 13s linear infinite;
+                animation-delay: -9s;
+            }
+            .snowflake:nth-child(25) {
+                --size: 0.2vw;
+                --left-ini: -6vw;
+                --left-end: 0vw;
+                left: 100vw;
+                animation: snowfall 8s linear infinite;
+                animation-delay: -3s;
+            }
+            .snowflake:nth-child(26) {
+                --size: 1vw;
+                --left-ini: -4vw;
+                --left-end: 3vw;
+                left: 72vw;
+                animation: snowfall 9s linear infinite;
+                animation-delay: -3s;
+            }
+            .snowflake:nth-child(27) {
+                --size: 0.8vw;
+                --left-ini: -1vw;
+                --left-end: 0vw;
+                left: 23vw;
+                animation: snowfall 14s linear infinite;
+                animation-delay: -1s;
+            }
+            .snowflake:nth-child(28) {
+                --size: 0.2vw;
+                --left-ini: 8vw;
+                --left-end: -5vw;
+                left: 37vw;
+                animation: snowfall 13s linear infinite;
+                animation-delay: -5s;
+            }
+            .snowflake:nth-child(29) {
+                --size: 1vw;
+                --left-ini: 9vw;
+                --left-end: 8vw;
+                left: 61vw;
+                animation: snowfall 12s linear infinite;
+                animation-delay: -1s;
+            }
+            .snowflake:nth-child(30) {
+                --size: 1vw;
+                --left-ini: -4vw;
+                --left-end: -1vw;
+                left: 59vw;
+                animation: snowfall 11s linear infinite;
+                animation-delay: -10s;
+            }
+            .snowflake:nth-child(31) {
+                --size: 1vw;
+                --left-ini: 2vw;
+                --left-end: -3vw;
+                left: 54vw;
+                animation: snowfall 15s linear infinite;
+                animation-delay: -7s;
+            }
+            .snowflake:nth-child(32) {
+                --size: 1vw;
+                --left-ini: -4vw;
+                --left-end: -2vw;
+                left: 82vw;
+                animation: snowfall 6s linear infinite;
+                animation-delay: -6s;
+            }
+            .snowflake:nth-child(33) {
+                --size: 0.8vw;
+                --left-ini: 8vw;
+                --left-end: 4vw;
+                left: 16vw;
+                animation: snowfall 7s linear infinite;
+                animation-delay: -2s;
+            }
+            .snowflake:nth-child(34) {
+                --size: 0.8vw;
+                --left-ini: -8vw;
+                --left-end: -4vw;
+                left: 39vw;
+                animation: snowfall 15s linear infinite;
+                animation-delay: -10s;
+            }
+            .snowflake:nth-child(35) {
+                --size: 1vw;
+                --left-ini: -9vw;
+                --left-end: 6vw;
+                left: 40vw;
+                animation: snowfall 13s linear infinite;
+                animation-delay: -1s;
+            }
+            .snowflake:nth-child(36) {
+                --size: 0.4vw;
+                --left-ini: -6vw;
+                --left-end: -6vw;
+                left: 36vw;
+                animation: snowfall 15s linear infinite;
+                animation-delay: -7s;
+            }
+            .snowflake:nth-child(37) {
+                --size: 0.4vw;
+                --left-ini: -5vw;
+                --left-end: -6vw;
+                left: 90vw;
+                animation: snowfall 7s linear infinite;
+                animation-delay: -9s;
+            }
+            .snowflake:nth-child(38) {
+                --size: 1vw;
+                --left-ini: -8vw;
+                --left-end: -8vw;
+                left: 9vw;
+                animation: snowfall 7s linear infinite;
+                animation-delay: -6s;
+            }
+            .snowflake:nth-child(39) {
+                --size: 0.6vw;
+                --left-ini: 5vw;
+                --left-end: 3vw;
+                left: 83vw;
+                animation: snowfall 7s linear infinite;
+                animation-delay: -3s;
+            }
+            .snowflake:nth-child(40) {
+                --size: 0.6vw;
+                --left-ini: -2vw;
+                --left-end: 1vw;
+                left: 84vw;
+                animation: snowfall 9s linear infinite;
+                animation-delay: -3s;
+            }
+            .snowflake:nth-child(41) {
+                --size: 0.6vw;
+                --left-ini: -1vw;
+                --left-end: -8vw;
+                left: 73vw;
+                animation: snowfall 13s linear infinite;
+                animation-delay: -9s;
+            }
+            .snowflake:nth-child(42) {
+                --size: 0.2vw;
+                --left-ini: -4vw;
+                --left-end: 3vw;
+                left: 19vw;
+                animation: snowfall 13s linear infinite;
+                animation-delay: -10s;
+            }
+            .snowflake:nth-child(43) {
+                --size: 0.4vw;
+                --left-ini: -2vw;
+                --left-end: 4vw;
+                left: 80vw;
+                animation: snowfall 13s linear infinite;
+                animation-delay: -3s;
+            }
+            .snowflake:nth-child(44) {
+                --size: 0.8vw;
+                --left-ini: 6vw;
+                --left-end: -3vw;
+                left: 7vw;
+                animation: snowfall 8s linear infinite;
+                animation-delay: -9s;
+            }
+            .snowflake:nth-child(45) {
+                --size: 0.6vw;
+                --left-ini: -5vw;
+                --left-end: -7vw;
+                left: 60vw;
+                animation: snowfall 8s linear infinite;
+                animation-delay: -7s;
+            }
+            .snowflake:nth-child(46) {
+                --size: 0.2vw;
+                --left-ini: -4vw;
+                --left-end: -9vw;
+                left: 82vw;
+                animation: snowfall 12s linear infinite;
+                animation-delay: -7s;
+            }
+            .snowflake:nth-child(47) {
+                --size: 0.2vw;
+                --left-ini: -4vw;
+                --left-end: -2vw;
+                left: 56vw;
+                animation: snowfall 15s linear infinite;
+                animation-delay: -8s;
+            }
+            .snowflake:nth-child(48) {
+                --size: 0.6vw;
+                --left-ini: 8vw;
+                --left-end: -8vw;
+                left: 11vw;
+                animation: snowfall 15s linear infinite;
+                animation-delay: -10s;
+            }
+            .snowflake:nth-child(49) {
+                --size: 1vw;
+                --left-ini: 3vw;
+                --left-end: 8vw;
+                left: 24vw;
+                animation: snowfall 12s linear infinite;
+                animation-delay: -9s;
+            }
+            .snowflake:nth-child(50) {
+                --size: 1vw;
+                --left-ini: 7vw;
+                --left-end: -8vw;
+                left: 69vw;
+                animation: snowfall 12s linear infinite;
+                animation-delay: -3s;
+            }
+
+            /* added small blur every 6 snowflakes*/
+            .snowflake:nth-child(6n) {
+                filter: blur(1px);
+            }
+            .img-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .image {
+                width: 420px;
+                height:413px;
+                margin: 10px;
+            }
+             *{
+                box-sizing: border-box;
+            }
+            header{
+                background:rgb(208, 136, 21);
+                padding: 30px;
+                text-align: center;
+                font-size: 30px;
+                color: #993800;
+                text-shadow: 5px 5px 2px black;
+            }
+            nav{
+                float: left;
+                width: 16%;
+                height: 800px;
+                background: #7c2e00;
+                padding: 20px;
+                color:burlywood;
+            }
+            nav ul{
+                list-style-type: none;
+                padding: 0;
+                font-size: 18px;
+            }
+            article{
+                float: left;
+                padding: 30px;
+                width: 84%;
+                background: rgb(219, 156, 55);
+                height: 800px;
+                color: #7c2e00;
+            }
+            /* input{
+                font-size: 18px;
+                height: 20%;
+            } */
+            section{
+                color: burlywood;
+            }
+            section::after{
+                content:"";
+                display: table;
+                clear: both;
+            }
+            .new-post{
+                background:rgb(219, 156, 55);
+                color: #7c2e00;
+                padding: 50px;
+                line-height: 0.5;
+            }
+            footer{
+                background:linear-gradient(rgb(219, 156, 55),burlywood);
+                background-color:bisque ;
+                padding: 5px;
+                text-align: center;
+                color: #7c2e00;
+                height: 180px;
+                font-size: 20px;
+            }
+            @media(max-width:600px){
+                nav, article{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            audio{
+                display: block;
+                float: center;
+                margin: 0 auto;
+                max-width: 120%;
+                border: 1px solid rgb(219, 156, 55);
+                border-radius: 8px;
+                background-color: #7c2e00;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+            }
+            audio::-webkit-media-controls-panel{
+                background-color: #7c2e00;
+                border-radius: 8px;
+            }            
+            audio::-webkit-media-controls-play-button{
+                background-color: rgb(219, 156, 55);
+                border: 2px solid whitesmoke;
+                border-radius: 50%;
+                width: 50px;
+                height: 30px;
+            }
+        </style>
+        <style>
+            td {
+                width: 50px;
+                height: 50px;
+            }
+    
+            .Calendar { 
+                text-align: center;
+                margin: left;
+                float: center;
+                font-weight: bold;
+            }
+    
+            .Calendar>thead>tr:first-child>td { font-weight: bold; }
+    
+            .Calendar>thead>tr:last-child>td {
+                background-color: #7c2e00;
+                color: rgb(219, 156, 55);
+            }        
+    
+            .pastDay{ background-color: #7c2e00; }
+    
+            .today{            
+                background-color: #7c2e00;            
+                cursor: pointer;
+                color : rgb(219, 156, 55);
+            }
+    
+
+            .futureDay{            
+                background-color: #7c2e00;
+                cursor: pointer;
+            }
+    
+            .futureDay.choiceDay, .today.choiceDay{            
+                background-color: #3E85EF;            
+                color: #fff;
+                cursor: pointer;
+            }
+        </style>
+        <script >
+            
+            window.onload = function () { buildCalendar(); }    // 웹 페이지가 로드되면 buildCalendar 실행
+    
+            let nowMonth = new Date();  // 현재 달을 페이지를 로드한 날의 달로 초기화
+            let today = new Date();     // 페이지를 로드한 날짜를 저장
+            today.setHours(0,0,0,0);    // 비교 편의를 위해 today의 시간을 초기화
+    
+            // 달력 생성 : 해당 달에 맞춰 테이블을 만들고, 날짜를 채워 넣는다.
+            function buildCalendar() {
+    
+                let firstDate = new Date(nowMonth.getFullYear(), nowMonth.getMonth(), 1);     // 이번달 1일
+                let lastDate = new Date(nowMonth.getFullYear(), nowMonth.getMonth() + 1, 0);  // 이번달 마지막날
+    
+                let tbody_Calendar = document.querySelector(".Calendar > tbody");
+                document.getElementById("calYear").innerText = nowMonth.getFullYear();             // 연도 숫자 갱신
+                document.getElementById("calMonth").innerText = leftPad(nowMonth.getMonth() + 1);  // 월 숫자 갱신
+    
+                while (tbody_Calendar.rows.length > 0) {                        // 이전 출력결과가 남아있는 경우 초기화
+                    tbody_Calendar.deleteRow(tbody_Calendar.rows.length - 1);
+                }
+    
+                let nowRow = tbody_Calendar.insertRow();        // 첫번째 행 추가           
+    
+                for (let j = 0; j < firstDate.getDay(); j++) {  // 이번달 1일의 요일만큼
+                    let nowColumn = nowRow.insertCell();        // 열 추가
+                }
+    
+                for (let nowDay = firstDate; nowDay <= lastDate; nowDay.setDate(nowDay.getDate() + 1)) {   // day는 날짜를 저장하는 변수, 이번달 마지막날까지 증가시키며 반복  
+    
+                    let nowColumn = nowRow.insertCell();        // 새 열을 추가하고
+                    nowColumn.innerText = leftPad(nowDay.getDate());      // 추가한 열에 날짜 입력
+    
+                
+                    if (nowDay.getDay() == 0) {                 // 일요일인 경우 글자색 빨강으로
+                        nowColumn.style.color = "#DC143C";
+                    }
+                    if (nowDay.getDay() == 6) {                 // 토요일인 경우 글자색 파랑으로 하고
+                        nowColumn.style.color = "#0000CD";
+                        nowRow = tbody_Calendar.insertRow();    // 새로운 행 추가
+                    }
+    
+    
+                    if (nowDay < today) {                       // 지난날인 경우
+                        nowColumn.className = "pastDay";
+                    }
+                    else if (nowDay.getFullYear() == today.getFullYear() && nowDay.getMonth() == today.getMonth() && nowDay.getDate() == today.getDate()) { // 오늘인 경우           
+                        nowColumn.className = "today";
+                        nowColumn.onclick = function () { choiceDate(this); }
+                    }
+                    else {                                      // 미래인 경우
+                        nowColumn.className = "futureDay";
+                        nowColumn.onclick = function () { choiceDate(this); }
+                    }
+                }
+            }
+    
+            // 날짜 선택
+            function choiceDate(nowColumn) {
+                if (document.getElementsByClassName("choiceDay")[0]) {                              // 기존에 선택한 날짜가 있으면
+                    document.getElementsByClassName("choiceDay")[0].classList.remove("choiceDay");  // 해당 날짜의 "choiceDay" class 제거
+                }
+                nowColumn.classList.add("choiceDay");           // 선택된 날짜에 "choiceDay" class 추가
+            }
+            
+            // 이전달 버튼 클릭
+            function prevCalendar() {
+                nowMonth = new Date(nowMonth.getFullYear(), nowMonth.getMonth() - 1, nowMonth.getDate());   // 현재 달을 1 감소
+                buildCalendar();    // 달력 다시 생성
+            }
+            // 다음달 버튼 클릭
+            function nextCalendar() {
+                nowMonth = new Date(nowMonth.getFullYear(), nowMonth.getMonth() + 1, nowMonth.getDate());   // 현재 달을 1 증가
+                buildCalendar();    // 달력 다시 생성
+            }
+    
+            // input값이 한자리 숫자인 경우 앞에 '0' 붙혀주는 함수
+            function leftPad(value) {
+                if (value < 10) {
+                    value = "0" + value;
+                    return value;
+                }
+                return value;
+            }
+        </script><br>
+    </head>
+    <body>
+        <div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+        <header>
+            <h2 style="font-size:70px"><center>🆂🅻🅾🅶</center></h2>
+        </header>
+        <section>
+            <nav>
+                <ul>
+                    <li><strong><font size = 4><abbr title="안녕하십니까, 양천구 사는 김석입니다.">inform</abbr></font></strong></li><br>
+                    <li><strong><font size = 4><abbr title="구경하고 가시면 되겠습니다.">talk</abbr></font></strong></li><br>
+                    <li><strong><font size = 4><abbr title="즐겁게 살고 있습니다.">life</abbr></font></strong></li><br>
+                    <li><strong><font size = 4>memory</font></strong></li><br><br>
+                    <table class="Calendar">
+                        <thead>
+                            <tr>
+                                <td onClick="prevCalendar();" style="cursor:pointer;">&#60;</td>
+                                <td colspan="5">
+                                    <span id="calYear"></span>년
+                                    <span id="calMonth"></span>월
+                                </td>
+                                <td onClick="nextCalendar();" style="cursor:pointer;">&#62;</td>
+                            </tr>
+                            <tr>
+                                <td>일</td>
+                                <td>월</td>
+                                <td>화</td>
+                                <td>수</td>
+                                <td>목</td>
+                                <td>금</td>
+                                <td>토</td>
+                            </tr>
+                        </thead>
+                
+                        <tbody>
+                        </tbody>
+                    </table>
+                </ul><br><br>
+                <audio controls autoplay>
+                    <source src="./브금/Ella Fitzgerald.mp3" type="audio/mpeg">
+                    <source src="./브금/Have Yourself A Merry Little Christmas.mp3" type="audio/mpeg">
+                    <source src="./브금/O Christmas Tree.mp3" type="audio/mpeg">
+                    <source src="./브금/Something About December.mp3" type="audio/mpeg">
+                    <source src="./브금/When You're Smiling.mp3" type="audio/mpeg">
+                </audio>
+                <script>
+                    //자동 재생을 위한 JS코드
+                    const audio = document.getElementById('myAudio');
+                    audio.autoplay = true;
+                </script>
+            </nav>
+            <article>
+                <h1><font size = 5>방명록</font></h1>
+                <div id="pagination">
+                    <div class="img-container">
+                    </div><br>
+                    <button id="prevPage"><font size = 4>이전</font></button>
+                    <button id="nextPage"><font size = 4>다음</font></button>
+                    <button onClick="window.location.reload()"><font size = 4 color="red">새로고침</font></button>
+                   </div>
+                   <script>
+                    const images = [
+                        './사진/xmas1.jpeg',
+                        './사진/xmas2.jpeg',
+                        './사진/xmas3.jpeg',
+                        './사진/xmas4.png',
+                        './사진/xmas4.jpeg',
+                        './사진/xmas5.jpeg',
+                        './사진/xmas6.png',
+                        './사진/xmas7.webp',
+                        './사진/xmas8.webp',
+                        './사진/xmas9.webp',
+                        './사진/xmas10.webp',
+                        './사진/xmas11.webp',
+                        './사진/xmas12.webp',
+                        './사진/xmas13.webp',
+                        './사진/xmas14.webp',
+                        './사진/xmas15.webp',
+                        './사진/xmas16.webp',
+                    ];
+                    const imagesPerpage = 4;
+                    let currentPage = 0; 
+                    const imageContainer = document.querySelector('.img-container');
+                    const prevButton = document.getElementById('prevPage');
+                    const nextButton = document.getElementById('nextPage');
+                    
+                    function displayImg(page){
+                    
+                        const startIndex = page * imagesPerpage;
+            
+                        const endIndex = startIndex + imagesPerpage;
+
+                        const pageImages = images.slice(startIndex, endIndex);
+            
+                        imageContainer.innerHTML = '';
+            
+                        pageImages.forEach(images => {
+                          
+                            const imgElement = document.createElement('img'); 
+                        
+                            imgElement.src = images;
+                            imgElement.classList.add('image');
+                            imageContainer.appendChild(imgElement);
+                        });
+                    }
+                    function updateButtons() {
+                        prevButton.disabled = currentPage ===0;
+            
+                        nextButton.disabled = (currentPage + 1) * imagesPerpage >= images.length;
+                    }
+                    prevButton.addEventListener('click', () => {
+                        if (currentPage > 0){
+                            currentPage --;
+                            displayImg(currentPage);
+                            updateButtons();
+                            
+                        }
+                    });
+                    nextButton.addEventListener('click', () => {
+                        if((currentPage + 1) *imagesPerpage < images.length){
+                            currentPage++;
+                            displayImg(currentPage);
+                            updateButtons();
+                        }
+                    })
+                    displayImg(currentPage);
+                    updateButtons();
+                   </script><br>  
+                <div>
+                    <!-- <input id="commentInput" size = 35px placeholder="방명록 작성"><br><br>
+                    <button onclick="addComment()"><font size = 4>작성완료</font></button>
+                    <div id="comments"> -->
+                    <form id="postForm">
+                        <label for="content"></label>
+                        <textarea id="content" name="content" required></textarea>
+                        <button type="submit" id="postUpdate">작성하기</button>
+                        <!-- <button disabled>작성하기</button> -->
+                        <div id="posts">
+                            <!-- 게시물 추가하는 공간-->
+                        </div>
+                    </form>
+                    </div>
+                </div>
+                <p><font size = 10></font><br></p>
+            </article>
+        </section>
+        <div class="new-post">
+            <h2><font size=4>profile</font></h2>
+            <p><font size=4>gender : M</font></p>
+            <p><font size=4>age : 27</font></p>
+            <p><font size=4>address : Seoul</font></p>
+            <p><font size=4>mbti : INTP</font></p>
+            <p><font size=4>merry christmas</font></p>
+        </div>
+        <!-- <script>
+            function addComment(){
+                const commentInput = document.getElementById("commentInput");
+    
+                const commentText = commentInput.value;
+    
+                if(commentText.trim()===""){
+                    alert("댓글을 작성해주세요.");
+                    return;
+                }
+                const commentsBox = document.getElementById("comments");
+                
+                const commentDIV = document.createElement("div");
+    
+                commentDIV.className = "comment";
+                
+                commentDIV.textContent = commentText;
+                
+                commentsBox.appendChild(commentDIV);
+                
+                commentInput.value="";
+                
+            }
+            </script> -->
+            <script>
+                 const postForm = document.getElementById("postForm");
+                const posts = document.getElementById("posts");
+                const postArray = []; //게시물을 저장하는 배열
+
+                postForm.addEventListener("submit",function(event){
+                    event.preventDefault();
+                    const title = postForm.title.value;
+                    const content = postForm.content.value;
+                    const date = new Date();
+                    const post = {
+                        title,
+                        content,
+                        date,
+                        comments:[],
+                    };
+                    postArray.push(post); //게시물을 배열에 추가
+
+                    //새 게시물을 담아줄 div 생성
+                    const postDiv = document.createElement("div");
+                    postDiv.classList.add("post");
+                    postDiv.innerHTML = `
+                    <h3>${title}</h3>
+                    <p>${content}</p>
+                    <p>게시일 : ${date.toLocaleString()}</p>
+
+                    `;
+
+                    //삭제버튼 생성
+                    const deleteButton = document.createElement("button");
+                    deleteButton.classList.add("delete-button");
+                    deleteButton.innerHTML = "삭제하기";
+                    deleteButton.addEventListener("click",() => {
+                        postArray.splice(postArray.indexOf(post),1);
+                        posts.removeChild(postDiv);
+                    });
+
+                    //댓글 폼 생성
+                    const commentForm = document.createElement("form");
+                    commentForm.innerHTML = `
+                        <input type="text" name="comment" placeholder="댓글추가하기">
+                        <button type="submit">게시</button>
+                    `;
+
+                    commentForm.addEventListener("submit", function(event) {
+                        event.preventDefault();
+                        const commentText = commentForm.comment.value;
+                        const comment = {
+                            text : commentText,
+                            date : new Date(),
+                        };
+
+                        post.comments.push(comment);
+                        const commentDiv = document.createElement("div");
+                        commentDiv.classList.add("comment");
+                        commentDiv.innerHTML = `
+                            <p>${commentText}</p>
+                            <p>게시일 : ${comment.date.toLocaleString()}</p>
+                        `;
+                        //댓글 입력 초기화
+                        commentForm.comment.value = "";
+                        postDiv.appendChild(commentDiv);
+                    });
+
+                    postDiv.appendChild(deleteButton);
+                    postDiv.appendChild(commentForm);
+
+                    //게시물 목록 추가
+                    posts.appendChild(postDiv);
+
+                    //게시글 입력 초기화
+                    postForm.title.value = "";
+                    postForm.content.value = "";
+                })
+            </script>
+            <footer>
+                <p><strong>social networks</strong></p>
+                <a href="https://www.instagram.com/seokcanvas/">instagram</a><br><br>
+                <a href="https://blog.naver.com/rlatjrrhkdrh1">naver_blog</a><br>
+            </footer>
+        </script>
+    </body>
+</html>

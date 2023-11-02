@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>우리 회사 홈페이지</title>
+        <meta charset="UFT-8">
+        <style>
+            *{
+                box-sizing: border-box;
+                
+            }
+            header{
+                background:rgb(103, 33, 0);
+                padding: 30px;
+                text-align: center;
+                font-size: 35px;
+                color: burlywood;
+            }
+            nav{
+                float: left;
+                width: 30%;
+                height: 300px;
+                background: rgb(103, 33, 0);
+                padding: 20px;
+            }
+            nav ul{
+                list-style-type: none;
+                padding: 0;
+            }
+            article{
+                float: left;
+                padding: 20px;
+                width: 70%;
+                background: burlywood;
+                height: 300px;
+                color: whitesmoke;
+            }
+            section{
+                color: burlywood;
+            }
+            section::after{
+                content:"";
+                display: table;
+                clear: both;
+            }
+            .new-post{
+                background:rgb(103, 33, 0);
+                color: burlywood;
+                padding: 20px;
+            }
+            footer{
+                background:linear-gradient(brown, burlywood, brown);
+                /*background-color:bisque ;*/
+                padding: 10px;
+                text-align: center;
+                color: whitesmoke;
+            }
+            @media(max-width:600px){
+                nav, article{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            audio{
+                display: block;
+                margin: 0 auto;
+                max-width: 80%;
+                border: 2px solid gray;
+                border-radius: 8px;
+                background-color: #fff;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            }
+            audio::-webkit-media-controls-panel{
+                background-color: lightcoral;
+                border-radius: 8px;
+            }            
+            audio::-webkit-media-controls-play-button{
+                background-color: brown;
+                border: 2px solid whitesmoke;
+                border-radius: 50%;
+                width: 50px;
+                height: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>블로그 메인</h2>
+        <p>반갑다.</p>
+    <header>
+        <h2><center>김석 블로그</center></h2>
+        <center><img src="./fall.png" style="width: 1024; height: 300px;"></center>
+    </header>
+    <section>
+        <nav>
+            <ul>
+                <li><strong>블로그 소개</strong></li><br>
+                <a href="https://www.instagram.com/seokcanvas/">인스타그램</a><br>
+                <a href="https://blog.naver.com/rlatjrrhkdrh1">네이버블로그</a><br>
+            </ul>
+        </nav>
+        <article>
+            <h1>김석 블로그</h1>
+            <p>동해물과 백두산이 마르고 닳도록<br></p>
+        </article>
+    </section>
+    <div class="new-post">
+        <h2>댓글 작성</h2>
+        <div class = "comment">
+            <input id="commentInput" placeholder="댓글작성하기">
+            <button onclick="addComment()">작성완료</button>
+            <div id="comments">
+                <!--댓글이 표시될 장소-->
+            </div>
+        </div>
+    </div>
+    <script>
+        function addComment(){
+            const commentInput = document.getElementById("commentInput");
+
+            const commentText = commentInput.value;
+
+            if(commentText.trim()===""){
+                alert("댓글을 작성해주세요.");
+                return;
+            }
+            const commentsBox = document.getElementById("comments");
+            
+            const commentDIV = document.createElement("div");
+
+            commentDIV.className = "comment";
+            
+            commentDIV.textContent = commentText;
+            
+            commentsBox.appendChild(commentDIV);
+            
+            commentInput.value="";
+        }
+    </script>
+    <footer>
+        <p><strong>소개 | 정보 | 소셜</strong></p>
+    </footer>
+</script>
+<audio controls autoplay>
+ <source src="./박재정 - 헤어지자 말해요.mp3" type="audio/mpeg">
+</audio>
+<script>
+ //자동 재생을 위한 JS코드
+ const audio = document.getElementById('myAudio');
+ audio.play();
+</script>
+    </body>
+</html>
